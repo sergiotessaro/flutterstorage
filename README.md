@@ -1,6 +1,6 @@
 # testeStorage
 
-A new Flutter project.
+This project were made just to study the firebase libraries.
 
 ## Getting Started
 
