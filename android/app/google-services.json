@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1039990221134",
+    "project_id": "testestorage-9a9c6",
+    "storage_bucket": "testestorage-9a9c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039990221134:android:ea9b3de5e3b9f7cd0d561f",
+        "android_client_info": {
+          "package_name": "com.example.testeStorage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039990221134-hn518ckt867c63cllsr9fau49m2s2gas.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwBcJFRNHQpPUK9IYNlik2OiKSxl5TfkU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039990221134-hn518ckt867c63cllsr9fau49m2s2gas.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
