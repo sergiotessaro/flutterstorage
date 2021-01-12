@@ -48,7 +48,7 @@ abstract class _HomeControllerBase with Store {
       DateTime data = await myfile.lastModified();
 
       String nome =
-          'cgi${data.day}${data.month}${data.year}${data.hour}${data.minute}${data.second}';
+          'image${data.day}${data.month}${data.year}${data.hour}${data.minute}${data.second}';
 
       firebaseHandler.saveImage(myfile, nome);
       firebaseHandler.saveImageThumb(imgComprimida, nome);
@@ -74,7 +74,7 @@ abstract class _HomeControllerBase with Store {
       DateTime data = await myfile.lastModified();
 
       String nome =
-          'cgi${data.day}${data.month}${data.year}${data.hour}${data.minute}${data.second}';
+          'image${data.day}${data.month}${data.year}${data.hour}${data.minute}${data.second}';
 
       firebaseHandler.saveImage(myfile, nome);
       firebaseHandler.saveImageThumb(imgComprimida, nome);
