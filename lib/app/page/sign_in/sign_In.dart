@@ -44,8 +44,8 @@ class _SignInState extends State<SignIn> {
                           firebaseHandler.senhaController.text,
                           context);
 
-                        String uid = await firebaseHandler.uid(); 
-                        print(uid); 
+                        var uid = await firebaseHandler.uid(); 
+                        print(uid.toString());
                     })
               ],
             ),

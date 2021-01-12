@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             size: 2
           ),
           textTheme: TextTheme(
-              headline6: TextStyle(color: Colors.white, fontSize: 15, fontFamily: 'PT_Sans-Narrow-Web')),
+              headline6: TextStyle(color: Colors.white, fontSize: 19, fontFamily: 'PT_Sans-Narrow-Web')),
           color: Colors.grey[800]
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
