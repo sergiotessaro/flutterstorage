@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:testeStorage/app/page/home/home.dart';
+import 'package:url_launcher/url_launcher.dart';
 part 'firebase.g.dart';
 
 class FireHandler = _FireHandlerBase with _$FireHandler;
@@ -130,14 +131,14 @@ abstract class _FireHandlerBase with Store {
     var lista =
         await storage3.ref().child('/$usuario/$uniqueId/$local/').listAll();
 
-   for (Reference e in lista.items) {
+    for (Reference e in lista.items) {
       var url = await e.getDownloadURL();
       var data = await e.getMetadata();
-      
+
       datas.add({"url": url, "data": data.timeCreated});
     }
 
-    datas.sort((a,b) => a["data"].compareTo(b["data"]));
+    datas.sort((a, b) => a["data"].compareTo(b["data"]));
     imagensList = ObservableList.of(datas);
 
     loading = false;
@@ -157,11 +158,11 @@ abstract class _FireHandlerBase with Store {
     for (Reference e in lista.items) {
       var url = await e.getDownloadURL();
       var data = await e.getMetadata();
-      
+
       datas.add({"url": url, "data": data.timeCreated});
     }
 
-    datas.sort((a,b) => a["data"].compareTo(b["data"]));
+    datas.sort((a, b) => a["data"].compareTo(b["data"]));
     imagensThumbList = ObservableList.of(datas);
     loading = false;
   }
@@ -171,10 +172,32 @@ abstract class _FireHandlerBase with Store {
       context: (context),
       builder: (context) {
         return Container(
-          child: InteractiveViewer(
-            panEnabled: true,
-            child: Image.network(url))
-          );
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              flex: 2,
+              child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: InteractiveViewer(
+                      panEnabled: true, child: Image.network(url))),
+            ),
+            Expanded(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: FlatButton(
+                      color: Colors.grey[500],
+                      onPressed: () async {
+                        await launch(url);
+                      },
+                      child: Text('Abrir na web')),
+                ),
+              ),
+            )
+          ],
+        ));
       },
     );
   }

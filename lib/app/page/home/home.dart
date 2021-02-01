@@ -57,8 +57,8 @@ class _HomePageState extends State<HomePage> {
                     itemBuilder: (context, index) {
                       if (firebaseHandler.loading != true) {
                         return GestureDetector(
-                          onTap: () {
-                            firebaseHandler.selectImage('images');
+                          onTap: () async {
+                            await firebaseHandler.selectImage('images');
                             firebaseHandler.showAlertDialog(
                                 firebaseHandler.imagensList[index]["url"], context);
                           },
